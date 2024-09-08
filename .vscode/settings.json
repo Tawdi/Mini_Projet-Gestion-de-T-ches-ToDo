@@ -1,7 +1,11 @@
 {
     "files.associations": {
+        "*.ejs": "html",
         "head.h": "c",
         "stdio.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "string.h": "c",
+        "corecrt_wtime.h": "c",
+        "corecrt.h": "c"
     }
 }

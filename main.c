@@ -1,8 +1,14 @@
 #include<stdio.h>
 #include"head.h"
+// #include"menu_fonctions.c"
+// #include"fichier_fonctions.c"
+// #include"ajoute_fonctions.c"
 
 
 
+
+
+int tache_count = 0;
 
 int main(){
     system("cls");
@@ -13,19 +19,20 @@ int main(){
 
 // fclose(todo_file);
 
-char reponce='y';
+char reponce[11];
 
 do
 {
     system("cls");
-    menu( );
+    menu();
    do
    {
     printf("\nest ce que vous voulez continuer utilisation de ce programme ? (y/n) ");
-    scanf(" %c", &reponce);
-   } while (reponce != 'y' && reponce != 'Y' && reponce != 'n' && reponce != 'N' );
+    scanf(" %[^\n]", reponce);
+    getchar();
+   } while (reponce[0] != 'y' && reponce[0] != 'Y' && reponce[0] != 'n' && reponce[0] != 'N' );
     
-} while (reponce == 'y' || reponce == 'Y');
+} while (reponce[0] == 'y' || reponce[0] == 'Y');
 
 
 return 0;

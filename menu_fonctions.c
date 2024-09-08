@@ -1,56 +1,64 @@
 #include"head.h"
+// #include"ajoute_fonctions.c"
 
-void menu(tache *Librairie, int *taille)
+void menu()
 {
-    char choix;
+    char choix[20];
     printf(" \n****************************************************************** ");
 
     printf(" \n========= Systeme de Gestion de Stock dans une Librairie ========= ");
     printf(" \n******************************************************************\n ");
 
-    printf("\n1 : Ajouter un livre au stock.");
-    printf("\n2 : Afficher tous les livres disponibles.   ");
-    printf("\n3 : Rechercher un livre par son titre.    ");
-    printf("\n4 : Mettre a jour la quantite d'un livre.    ");
-    printf("\n5 : Supprimer un livre du stock.    ");
-    printf("\n6 : Afficher le nombre total de livres en stock.    ");
+    printf("\n1 : Ajouter une nouvelle tache.");
+    printf("\n2 : Afficher la liste de toutes les taches.   ");
+    printf("\n3 : Rechercher les taches.    ");
+    printf("\n4 : Modifier une tache.    ");
+    printf("\n5 : Supprimer une tache.    ");
+    printf("\n6 : Statistiques.    ");
     // do
     // {
         printf(" \n\nvotre choix  :");
-    scanf(" %c", &choix);
+    scanf(" %[^\n]", choix);
+    getchar();
     // } while (choix<1 || choix>6);
     
     
 
-    switch (choix)
+    switch (choix[0])
     {
     case '1':
          system("cls");
+          printf("\nAjouter une nouvelle tache.");
+          ajoute_un_tache();
         // ajoute(Librairie, taille);
         break;
     case '2':
          system("cls");
-        // Afficher_tous_les_livres(Librairie, taille);
+        printf("\n2 : Afficher la liste de toutes les taches.   ");
+        Afficher_tous_taches_par_user_id(1);
         break;
     case '3':
          system("cls");
-        // Rechercher_un_livre_par_so_titre(Librairie, taille);
+        printf("\n3 : Rechercher les taches.    ");
         break;
     case '4':
          system("cls");
-        // Mettre_a_jour_la_quantite_un_livre(Librairie, taille);
+        printf("\n4 : Modifier une tache.    ");
+    
         break;
     case '5':
          system("cls");
-        // Supprimer_un_livre_du_stock(Librairie, taille);
+        printf("\n5 : Supprimer une tache.    ");
+    
         break;
     case '6':
          system("cls");
-        // Afficher_le_nombre_total_de_livres_en_stock(Librairie, taille);
+        printf("\n6 : Statistiques.    ");
         break;
 
     default:
-        // menu(Librairie, taille);
+         system("cls");
+         menu();
         break;
     }
 }
