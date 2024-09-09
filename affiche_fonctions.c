@@ -29,32 +29,43 @@ void status_au_char(int status)
    printf("|%-30s", tmpchar);
 }
 
+// supprime affichage
+void affiche_seule_tache_sans_desc(tache *tache_, int code)
+{
+   printf("   %4d |", code);
 
-void affiche_seule_tache(tache* tache_){
+   printf("%-30s", tache_->titre);
 
-         printf("               |%-30s", tache_->titre);
+   //   à réaliser : 1  en cours de réalisation : 2  finalisée: 3
+   status_au_char(tache_->status);
 
-         //   à réaliser : 1  en cours de réalisation : 2  finalisée: 3
-         status_au_char(tache_->status);
-
-         date_au_char(tache_->deadline);
-
-         printf("\n               ----------------------------------------------------------------------------------\n");
-         printf("   %d  |  description :                                                                  |  \n", tache_->id);
-         // printf("\n               ===================================================================================\n");
-         printf("               | %-80s|  ", tache_->desc);
-
-         printf("\n==================================================================================================\n");
-         // printf("\n--------------------------------------------------------------------------------------------------\n");
+   date_au_char(tache_->deadline);
+   printf("\n==================================================================================================\n");
 }
 
+void affiche_seule_tache(tache *tache_)
+{
 
+   printf("               |%-30s", tache_->titre);
 
+   //   à réaliser : 1  en cours de réalisation : 2  finalisée: 3
+   status_au_char(tache_->status);
+
+   date_au_char(tache_->deadline);
+
+   printf("\n               ----------------------------------------------------------------------------------\n");
+   printf("   %d  |  description :                                                                  |  \n", tache_->id);
+   // printf("\n               ===================================================================================\n");
+   printf("               | %-80s|  ", tache_->desc);
+
+   printf("\n==================================================================================================\n");
+   // printf("\n--------------------------------------------------------------------------------------------------\n");
+}
 
 void Afficher_tous_taches_par_user_id(int id)
 {
 
-   tache *tache_=malloc(sizeof(tache));
+   tache *tache_ = malloc(sizeof(tache));
    printf("\n ****************************************************************** ");
    printf(" \n=============== ficher tous les livres disponibles =============== \n");
    printf(" ******************************************************************\n ");

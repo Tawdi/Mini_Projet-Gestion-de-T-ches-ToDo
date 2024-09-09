@@ -50,7 +50,8 @@ void menu()
         break;
     case '5':
          system("cls");
-        printf("\n5 : Supprimer une tache.    ");
+        // printf("\n5 : Supprimer une tache.    ");
+        Supprimer_tache_par_titre();
     
         break;
     case '6':
@@ -60,7 +61,6 @@ void menu()
     case '0':
          printf("\n ***************  au revoir  :)  ********\n\n    ");
          exit(0);
-        
         break;    
 
     default:

@@ -66,6 +66,8 @@ void ajoute_tache_au_fichier(tache * tache ,const char* file,const char* mode );
 // Afficher le nombre de jours restants jusqu'au délai de chaque tâche.
 void affiche_seule_tache(tache* tache_);
 
+void affiche_seule_tache_sans_desc(tache* tache_,int code);
+
 void status_au_char(int status);
 
 void date_au_char(date deadline);
@@ -100,6 +102,7 @@ void modifier_le_status_de_tache();
 
 // supprime
 void Supprimer_tache_par_id(int id);
+void Supprimer_tache_par_titre();
 
 // menu
 void menu();
