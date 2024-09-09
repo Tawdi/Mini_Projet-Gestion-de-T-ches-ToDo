@@ -6,6 +6,7 @@
 #include <string.h>
 #include <time.h>
 
+
 typedef struct
 {
     int min, heure, jour, mois, anne;
@@ -28,7 +29,7 @@ typedef struct
     int id;
     char titre[100];
     char desc[400];
-    int status; //   à réaliser : 0  en cours de réalisation : 1   finalisée: 2
+    int status; //   à réaliser : 1  en cours de réalisation : 2  finalisée: 3
     date deadline;
     int id_user;
     int team_ids[20];

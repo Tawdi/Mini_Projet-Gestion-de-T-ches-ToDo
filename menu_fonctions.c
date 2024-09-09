@@ -15,6 +15,8 @@ void menu()
     printf("\n4 : Modifier une tache.    ");
     printf("\n5 : Supprimer une tache.    ");
     printf("\n6 : Statistiques.    ");
+    printf("\n0 : Exit.    ");
+
     // do
     // {
         printf(" \n\nvotre choix  :");
@@ -55,6 +57,11 @@ void menu()
          system("cls");
         printf("\n6 : Statistiques.    ");
         break;
+    case '0':
+         printf("\n ***************  au revoir  :)  ********\n\n    ");
+         exit(0);
+        
+        break;    
 
     default:
          system("cls");

@@ -1,4 +1,4 @@
-#include"head.h"
+#include "head.h"
 
 // typedef struct
 // {
@@ -13,29 +13,29 @@
 
 // } tache;
 
-
 // // ajoute
-void ajoute_un_tache(){
-    tache* tmp=malloc(sizeof(tache));
+void ajoute_un_tache()
+{
+    tache *tmp = malloc(sizeof(tache));
 
-    tmp->id=tache_count;
+    int test = 0;
+    tmp->id = time(NULL);
     tache_count++;
-    date deadline={22,12,11,9,2024};
+    date deadline= {11,11,11,11,2051};
     tmp->deadline=deadline;
-    tmp->id_user =11;
-    tmp->team_nbr=2;
-    tmp->team_ids[0]= 21;
-    tmp->team_ids[1]= 31;
+    tmp->id_user = 100;
+    tmp->team_nbr = 0;
+    tmp->status = 1;
 
+    // tmp->team_ids[0]= 21;
+    // tmp->team_ids[1]= 31;
 
-
-    
     printf("\n ******************************************************************\n ");
-    printf("           ========= Ajouter un tache  ========= ");
+    printf("             ========= Ajouter un tache  ========= ");
     printf("\n ******************************************************************\n ");
     printf("   titre : ");
 
-    getchar();
+    // getchar();
     scanf("%[^\n]", tmp->titre);
     getchar();
 
@@ -44,7 +44,20 @@ void ajoute_un_tache(){
     // getchar();
     scanf("%[^\n]", tmp->desc);
     getchar();
+    do
+    {
+        printf("*****svp entrer le dealine sous cette forme HH:MM JJ/MM/YYY *****\n*****************example 02:50 30/03/2030 ************************* \n   deadline: ");
+        test = scanf(" %d:%d %d/%d/%d ", &deadline.min, &deadline.heure, &deadline.jour, &deadline.mois, &deadline.anne);
+        
+        // getchar();
 
-    ajoute_tache_au_fichier(tmp,"./test.txt","wb");
-//    create
+    } while (test != 5);
+
+    if(test==5) 
+    {
+        tmp->deadline = deadline;
+    }
+
+    ajoute_tache_au_fichier(tmp, "./test.txt", "ab");
+    //    create
 }
