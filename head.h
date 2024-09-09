@@ -14,6 +14,8 @@ typedef struct
 }date;
 
 FILE * todo_file;
+FILE * statistique_file;
+
 extern int tache_count;
 typedef struct
 {
@@ -62,6 +64,12 @@ void ajoute_tache_au_fichier(tache * tache ,const char* file,const char* mode );
 // Afficher le nombre de tâches complètes et incomplètes.
 
 // Afficher le nombre de jours restants jusqu'au délai de chaque tâche.
+void affiche_seule_tache(tache* tache_);
+
+void status_au_char(int status);
+
+void date_au_char(date deadline);
+
 void Afficher_tous_taches_par_user_id(int id);
 
 void Afficher_le_nombre_total_des_taches();
@@ -95,5 +103,9 @@ void Supprimer_tache_par_id(int id);
 
 // menu
 void menu();
+
+// statistique
+int taille_moins_plus(int a );
+int nombre_des_taches();
 
 #endif

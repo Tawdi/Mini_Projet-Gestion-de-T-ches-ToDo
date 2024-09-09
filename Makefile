@@ -2,7 +2,7 @@
 CC = gcc
 
 # Define the source files
-SRC = main.c menu_fonctions.c fichier_fonctions.c ajoute_fonctions.c affiche_fonctions.c initiale_fonctions.c modifie_fonctions.c recherche_fonctions.c supprime_fonctions.c
+SRC = main.c menu_fonctions.c fichier_fonctions.c ajoute_fonctions.c affiche_fonctions.c initiale_fonctions.c modifie_fonctions.c recherche_fonctions.c supprime_fonctions.c statistiques_fonctions.c
 
 # Create a list of object files by replacing .c with .o
 OBJ = $(SRC:.c=.o)

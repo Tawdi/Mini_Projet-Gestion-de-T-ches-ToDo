@@ -29,7 +29,7 @@ void ajoute_un_tache()
 
     // tmp->team_ids[0]= 21;
     // tmp->team_ids[1]= 31;
-
+    
     printf("\n ******************************************************************\n ");
     printf("             ========= Ajouter un tache  ========= ");
     printf("\n ******************************************************************\n ");
@@ -47,7 +47,7 @@ void ajoute_un_tache()
     do
     {
         printf("*****svp entrer le dealine sous cette forme HH:MM JJ/MM/YYY *****\n*****************example 02:50 30/03/2030 ************************* \n   deadline: ");
-        test = scanf(" %d:%d %d/%d/%d ", &deadline.min, &deadline.heure, &deadline.jour, &deadline.mois, &deadline.anne);
+        test = scanf("%d:%d %d/%d/%d", &deadline.min, &deadline.heure, &deadline.jour, &deadline.mois, &deadline.anne);
         
         // getchar();
 

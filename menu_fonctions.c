@@ -30,18 +30,18 @@ void menu()
     {
     case '1':
          system("cls");
-          printf("\nAjouter une nouvelle tache.");
+        //   printf("\nAjouter une nouvelle tache.");
           ajoute_un_tache();
-        // ajoute(Librairie, taille);
         break;
     case '2':
          system("cls");
-        printf("\n2 : Afficher la liste de toutes les taches.   ");
+        // printf("\n2 : Afficher la liste de toutes les taches.   ");
         Afficher_tous_taches_par_user_id(1);
         break;
     case '3':
          system("cls");
-        printf("\n3 : Rechercher les taches.    ");
+        // printf("\n3 : Rechercher les taches.    ");
+        Rechercher_un_tache_par_titre();
         break;
     case '4':
          system("cls");

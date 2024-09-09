@@ -16,6 +16,7 @@ int ouvrir_fichier(const char* file,const char* mode){
 void ecrire_un_tache_au_fichier(tache * tache_,FILE* file){
 
     fwrite(tache_,sizeof(tache),1,file);
+    taille_moins_plus(1);
 
 }
 

@@ -11,7 +11,7 @@
 int tache_count = 0;
 
 int main(){
-    system("cls");
+    // system("cls");
 
 // FILE *todo_file;
 
@@ -23,7 +23,7 @@ char reponce[11];
 
 do
 {
-    system("cls");
+    // system("cls");
     menu();
    do
    {
