@@ -16,7 +16,7 @@ void Supprimer_tache_par_titre()
 {
 
     printf("\n ****************************************************************** ");
-    printf("\n      ======== Rechercher une tache par son titre. =========     \n");
+    printf("\n      ======== suppression une tache par son titre. =========     \n");
     printf(" ****************************************************************** \n");
     char temp[100];
     int y = -1;
@@ -33,7 +33,7 @@ void Supprimer_tache_par_titre()
     int taille = nombre_des_taches();
     tache *tache_ = malloc(taille * sizeof(tache));
     // tache tache_temp;
-    int temp_int[taille];
+    int * temp_int=malloc(taille*sizeof(int));
     int count = 0;
     if (op == 1)
     {
