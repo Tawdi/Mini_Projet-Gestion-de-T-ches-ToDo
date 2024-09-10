@@ -1,5 +1,5 @@
-#ifndef MINI_PROJET_LIB_H
-#define MINI_PROJET_LIB_H
+#ifndef HEAD_H
+#define HEAD_H
 
 #include <stdio.h>
 #include <stdlib.h>
