@@ -26,7 +26,7 @@ void status_au_char(int status)
    {
       strcpy(tmpchar, "finalisee");
    }
-   printf("|%-30s", tmpchar);
+   printf("%-30s", tmpchar);
 }
 
 // supprime affichage
@@ -37,6 +37,7 @@ void affiche_seule_tache_sans_desc(tache *tache_, int code)
    printf("%-30s", tache_->titre);
 
    //   à réaliser : 1  en cours de réalisation : 2  finalisée: 3
+   printf("|");
    status_au_char(tache_->status);
 
    date_au_char(tache_->deadline);
@@ -49,6 +50,7 @@ void affiche_seule_tache(tache *tache_)
    printf("               |%-30s", tache_->titre);
 
    //   à réaliser : 1  en cours de réalisation : 2  finalisée: 3
+   printf("|");
    status_au_char(tache_->status);
 
    date_au_char(tache_->deadline);
@@ -62,12 +64,12 @@ void affiche_seule_tache(tache *tache_)
    // printf("\n--------------------------------------------------------------------------------------------------\n");
 }
 
-void Afficher_tous_taches_par_user_id(int id)
+void Afficher_tous_taches()
 {
 
    tache *tache_ = malloc(sizeof(tache));
    printf("\n ****************************************************************** ");
-   printf(" \n=============== ficher tous les livres disponibles =============== \n");
+   printf("\n ===============    affichage de tous les taches    =============== \n");
    printf(" ******************************************************************\n ");
    printf("\n==================================================================================================\n");
    printf("     id        |             titre            |             status           |       deadline    |  ");
@@ -90,8 +92,74 @@ void Afficher_tous_taches_par_user_id(int id)
    fermer_fichier(todo_file);
 }
 
-void Afficher_le_nombre_total_des_taches();
+void Afficher_le_nombre_total_des_taches()
+{
+   int nbr = nombre_des_taches();
+   printf("\nle nombre total des taches : %d \n", nbr);
+}
 
-void Afficher_le_nombre_des_taches_completes();
+void Afficher_le_nombre_des_taches_completes_incompletes()
+{
 
-void Afficher_le_nombre_des_taches_incompletes();
+   tache *tache_ = malloc(sizeof(tache));
+   fermer_fichier(todo_file);
+   int op = ouvrir_fichier("./test.txt", "rb");
+   int count_complete = 0, count_incomplete = 0;
+   if (op == 1)
+   {
+
+      while (fread(tache_, sizeof(tache), 1, todo_file))
+      {
+         if (tache_->status == 3)
+         {
+            count_complete++;
+         }
+         else
+         {
+            count_incomplete++;
+         }
+      }
+      printf("\nle nombre de taches completes   : %d \n", count_complete);
+      printf("\nle nombre de taches incompletes : %d \n", count_incomplete);
+   }
+   else
+   {
+      printf("error affichage: ouvrir fichier \n");
+   }
+   fermer_fichier(todo_file);
+}
+void Afficher_le_nombre_de_jours_restants_pour_les_taches(){
+   Afficher_tous_taches();
+};
+
+void Affiche_statistique()
+{
+   printf(" \n******************************************************************************** ");
+   printf(" \n           ===============  statistique de TODO-list  ===============           ");
+   // printf(" *******************************************************************\n ");
+   printf(" \n******************************************************************************** ");
+
+   printf("\n**   1 : Afficher le nombre total des taches.                                 **    ");
+   printf("\n**   2 : Afficher le nombre de taches completes et incompletes.               **    ");
+   printf("\n**   3 : Afficher le nombre de jours restants jusqu'au delai de chaque tache. **    ");
+   char choix_md[4];
+   do
+   {
+      printf(" \n\nvotre choix  :");
+      scanf(" %[^\n]", choix_md);
+      getchar();
+
+      switch (choix_md[0])
+      {
+      case '1':
+        Afficher_le_nombre_total_des_taches();
+         break;
+      case '2':
+          Afficher_le_nombre_des_taches_completes_incompletes();
+         break;
+      case '3':
+          Afficher_le_nombre_de_jours_restants_pour_les_taches();
+         break;
+      }
+   } while (choix_md[0] != '1' && choix_md[0] != '2' && choix_md[0] != '3');
+}

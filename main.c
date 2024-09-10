@@ -20,6 +20,8 @@ int main(){
 // fclose(todo_file);
 
 char reponce[11];
+tache* taches = tous_les_taches_dans_fichier();
+tri_alphabetique(taches);
 
 do
 {
