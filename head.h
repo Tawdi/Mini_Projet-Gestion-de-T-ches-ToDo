@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <ctype.h>
+
 
 
 typedef struct
@@ -68,6 +70,7 @@ void affiche_seule_tache_sans_desc(tache* tache_,int code); //done
 void status_au_char(int status); //done
 
 void date_au_char(date deadline); //need wooork
+int choisir_le_type_de_affichage();
 
 // void Afficher_tous_taches_par_user_id(int id); 
 void Afficher_tous_taches(); //done
@@ -93,7 +96,9 @@ void Rechercher_un_tache_par_titre();//done
 void Rechercher_un_tache_par_id(int id); // ???????
 //tri
 //Trier les tâches par ordre alphabétique.
-void tri_alphabetique(tache *tmp);
+void tri_alphabetique(tache *tache_);
+void tri_par_deadline(tache *tache_);
+
 //Trier les tâches par deadline.
 // modifie
 void Modifier_un_tache_par_titre();
